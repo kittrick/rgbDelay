@@ -4,8 +4,8 @@ Capture rCap;
 Capture gCap;
 Capture bCap;
 
-int nDelayFrames = 10; // about 3 seconds
-int nDelayFramesB = 21;
+int nDelayFrames = 4; // about 3 seconds
+int nDelayFramesB = 2;
 int currentFrame = nDelayFrames-1;
 int currentFrameB = nDelayFramesB-1;
 PImage frames[];
@@ -64,9 +64,11 @@ void draw() {
     blendMode(NORMAL);
     // RED
     image(rCap, 0, 0, width, height);
-    blendMode(SCREEN);
+
     // BLUE
+    blendMode(SCREEN);
     image (framesB[currentFrameB], 0, 0, width, height);
+    
     // GREEN
     image (frames[currentFrame], 0, 0, width, height);
   popMatrix();
